@@ -1,0 +1,281 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-muted: #666666;
+    --border-color: #e5e5e5;
+    --accent-color: #111111;
+    --font-serif: "Didot", "Bodoni MT", "Cinzel", "Georgia", serif;
+    --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header & Nav */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 32px;
+    font-family: var(--font-serif);
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-left: 30px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--text-color);
+}
+
+/* Hero section */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fcfcfc;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+    font-size: 110px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Buttons */
+.btn {
+    padding: 16px 36px;
+    border: 1px solid var(--accent-color);
+    text-decoration: none;
+    color: var(--accent-color);
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Sections globales */
+.page-content {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.page-content h1 {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+.manifesto {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.manifesto h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.manifesto p {
+    font-size: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+/* Grids & Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    background: #fff;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: #111;
+}
+
+.card h3 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Portfolio */
+.portfolio-grid .card {
+    padding: 0;
+    border: none;
+}
+
+.portfolio-grid .card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.portfolio-grid .card span {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.placeholder-img {
+    aspect-ratio: 4/3;
+    background: #f5f5f5;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-grid .card:hover .placeholder-img {
+    opacity: 0.8;
+}
+
+/* Formulaires & Contact */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.form-project {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+input, textarea {
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.btn-submit {
+    align-self: flex-start;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 60px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    header { padding: 20px 30px; flex-direction: column; gap: 15px; }
+    nav a { margin: 0 10px; }
+    .hero h1 { font-size: 60px; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .page-content { padding-top: 40px; }
+}
