@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SoArt Atelier</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SoArt</div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h1>Parlons de votre projet</h1>
+                <p>Vous avez un projet de rénovation ou d'aménagement sur la Côte d'Azur ? Rencontrons-nous pour étudier vos besoins.</p>
+            </div>
+            <form class="form-project">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Description de votre projet</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; SoArt Atelier Côte d'Azur</p>
+    </footer>
+</body>
+</html>
