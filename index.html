@@ -24,44 +24,48 @@
     <main>
         <section class="hero">
             <div class="hero-container">
-                <!-- Nouveau dessin : Structure de maison en travaux enveloppée d'un échafaudage technique -->
+                <!-- Nouveau dessin : Coupe technique d'une maison en rénovation générale -->
                 <div class="blueprint-vector">
                     <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Ligne de sol / Terre plate du chantier -->
+                        <!-- Ligne de sol générale / Fondation -->
                         <line x1="20" y1="240" x2="380" y2="240" stroke="#b0b0b0" stroke-width="1.5" />
                         
-                        <!-- Structure principale de la bâtisse (lignes de maçonnerie) -->
-                        <rect x="90" y="110" width="180" height="130" stroke="#111111" stroke-width="1.8" />
-                        <polygon points="90,110 180,60 270,110" stroke="#111111" stroke-width="2" fill="none" />
+                        <!-- Murs extérieurs de la maison en coupe (Lignes fortes) -->
+                        <line x1="80" y1="240" x2="80" y2="80" stroke="#111111" stroke-width="2.5" />
+                        <line x1="320" y1="240" x2="320" y2="80" stroke="#111111" stroke-width="2.5" />
+                        <polygon points="80,80 200,35 320,80" stroke="#111111" stroke-width="2.5" fill="none" />
                         
-                        <!-- Baies vitrées / Ouvertures en cours de pose -->
-                        <rect x="120" y="140" width="40" height="60" stroke="#b0b0b0" stroke-width="1" />
-                        <rect x="200" y="140" width="40" height="60" stroke="#b0b0b0" stroke-width="1" />
-                        <rect x="160" y="85" width="40" height="25" stroke="#b0b0b0" stroke-width="1" />
-
-                        <!-- Structure de l'Échafaudage (Inspiré de image_31b7a0.jpg) -->
-                        <!-- Poteaux verticaux de l'échafaudage (dépassent du toit) -->
-                        <line x1="70" y1="40" x2="70" y2="240" stroke="#111111" stroke-width="1" />
-                        <line x1="150" y1="40" x2="150" y2="240" stroke="#cccccc" stroke-width="0.8" />
-                        <line x1="210" y1="40" x2="210" y2="240" stroke="#cccccc" stroke-width="0.8" />
-                        <line x1="290" y1="40" x2="290" y2="240" stroke="#111111" stroke-width="1" />
+                        <!-- Plancher intermédiaire / Séparation des niveaux (R+1) -->
+                        <line x1="80" y1="150" x2="320" y2="150" stroke="#111111" stroke-width="2" />
                         
-                        <!-- Planchers horizontaux de travail (Niveaux de l'échafaudage) -->
-                        <!-- Niveau 1 -->
-                        <line x1="60" y1="180" x2="300" y2="180" stroke="#111111" stroke-width="1.2" />
-                        <!-- Niveau 2 -->
-                        <line x1="60" y1="120" x2="300" y2="120" stroke="#111111" stroke-width="1.2" />
-                        <!-- Niveau 3 (Toiture) -->
-                        <line x1="60" y1="65" x2="300" y2="65" stroke="#111111" stroke-width="1.2" />
-
-                        <!-- Diagonales de contreventement / Sécurité du chantier -->
-                        <line x1="70" y1="120" x2="150" y2="180" stroke="#b0b0b0" stroke-width="0.8" />
-                        <line x1="210" y1="120" x2="290" y2="180" stroke="#b0b0b0" stroke-width="0.8" />
-                        <line x1="70" y1="65" x2="150" y2="120" stroke="#b0b0b0" stroke-width="0.8" />
+                        <!-- AMÉNAGEMENT REZ-DE-CHAUSSÉE -->
+                        <!-- Cloisonnement maçonné -->
+                        <line x1="180" y1="240" x2="180" y2="150" stroke="#111111" stroke-width="1.2" />
+                        <!-- Escalier technique en ligne de coupe (Montée à l'étage) -->
+                        <path d="M 240 240 L 255 225 L 255 210 L 270 210 L 270 195 L 285 195 L 285 180 L 300 180 L 300 165 L 315 165 L 315 150" stroke="#111111" stroke-width="1" fill="none" />
                         
-                        <!-- Cotes techniques et pointillés d'alignement -->
-                        <line x1="330" y1="60" x2="330" y2="240" stroke="#b0b0b0" stroke-width="0.8" stroke-dasharray="3 3" />
-                        <path d="M 325 60 L 335 60 M 325 240 L 335 240" stroke="#b0b0b0" stroke-width="0.8" />
+                        <!-- AMÉNAGEMENT ÉTAGE -->
+                        <!-- Future cloison / Projet d'agencement (Pointillés de rénovation) -->
+                        <line x1="150" y1="150" x2="150" y2="98" stroke="#111111" stroke-width="1" stroke-dasharray="3 3" />
+                        <!-- Repère de volume sous rampant / Dressing ou placard intégré -->
+                        <rect x="95" y="115" width="40" height="35" stroke="#cccccc" stroke-width="0.8" stroke-dasharray="2 2" />
+                        
+                        <!-- OUVERTURES ET SYMBOLES TECHNIQUES -->
+                        <!-- Baie vitrée Rez-de-Chaussée (Trait fin) -->
+                        <rect x="100" y="180" width="50" height="60" stroke="#b0b0b0" stroke-width="1" />
+                        <!-- Fenêtre Étage -->
+                        <rect x="250" y="105" width="40" height="30" stroke="#b0b0b0" stroke-width="1" />
+                        
+                        <!-- COTES D'ARCHITECTE AND LIGNES DE MESURES -->
+                        <!-- Cote de hauteur Rez-de-chaussée -->
+                        <line x1="55" y1="150" x2="55" y2="240" stroke="#cccccc" stroke-width="0.8" />
+                        <path d="M 52 150 L 58 150 M 52 240 L 58 240" stroke="#cccccc" stroke-width="0.8" />
+                        <!-- Cote de hauteur Étage -->
+                        <line x1="55" y1="80" x2="55" y2="150" stroke="#cccccc" stroke-width="0.8" />
+                        <path d="M 52 80 L 58 80" stroke="#cccccc" stroke-width="0.8" />
+                        
+                        <!-- Axe de symétrie / Repère de chantier central -->
+                        <line x1="200" y1="20" x2="200" y2="260" stroke="#b0b0b0" stroke-width="0.8" stroke-dasharray="6 4" />
                     </svg>
                 </div>
                 
