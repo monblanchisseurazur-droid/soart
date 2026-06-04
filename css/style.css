@@ -1,9 +1,8 @@
 :root {
     --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --text-muted: #666666;
-    --border-color: #e5e5e5;
-    --accent-color: #111111;
+    --text-color: #111111;
+    --text-muted: #555555;
+    --border-color: #e2e2e2;
     --font-serif: "Didot", "Bodoni MT", "Cinzel", "Georgia", serif;
     --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
@@ -18,7 +17,7 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-sans);
-    line-height: 1.7;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -28,140 +27,174 @@ body {
     padding: 0 40px;
 }
 
-/* Header & Nav */
+/* Header & Logo Typographique fidèle à image_329252.png */
 header {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     border-bottom: 1px solid var(--border-color);
-    padding: 25px 60px;
+    padding: 20px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    backdrop-filter: blur(5px);
 }
 
-.logo {
-    font-size: 32px;
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.brand-logo .main-title {
+    font-size: 40px;
     font-family: var(--font-serif);
-    letter-spacing: 1px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.brand-logo .sub-title-1 {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 7px;
+    margin-top: 2px;
+    padding-left: 7px; /* Équilibre l'effet de la dernière lettre */
+}
+
+.brand-logo .sub-title-2 {
+    font-size: 7px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-top: 4px;
+    padding-left: 5px;
+    color: #666;
 }
 
 nav a {
     margin-left: 30px;
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: color 0.3s ease;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
 }
 
 nav a:hover, nav a.active {
     color: var(--text-color);
+    font-weight: 500;
 }
 
-/* Hero section */
+/* Zone Hero avec Dessin Architectural */
 .hero {
-    height: 85vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background: #fcfcfc;
+    background: #fafafa;
     border-bottom: 1px solid var(--border-color);
+    padding: 60px 20px;
 }
 
-.hero h1 {
-    font-size: 110px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    font-family: var(--font-serif);
-    letter-spacing: -2px;
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
 }
 
-.hero h2 {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 6px;
+.blueprint-vector {
+    width: 100%;
+    max-width: 450px;
+    justify-self: center;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-text .tagline {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.2;
     margin-bottom: 30px;
 }
 
-.hero p {
-    font-size: 18px;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-    font-weight: 300;
-}
-
-/* Buttons */
+/* Boutons professionnels */
 .btn {
-    padding: 16px 36px;
-    border: 1px solid var(--accent-color);
+    padding: 15px 30px;
+    border: 1px solid var(--text-color);
     text-decoration: none;
-    color: var(--accent-color);
+    color: #fff;
+    background: var(--text-color);
     display: inline-block;
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-    background: transparent;
-    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
-    background: var(--accent-color);
-    color: var(--bg-color);
+    background: transparent;
+    color: var(--text-color);
 }
 
-/* Sections globales */
+/* Pages de contenu */
 .page-content {
-    padding-top: 80px;
-    padding-bottom: 100px;
+    padding-top: 70px;
+    padding-bottom: 90px;
 }
 
 .page-content h1 {
     font-family: var(--font-serif);
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 400;
-    margin-bottom: 50px;
-    letter-spacing: -0.5px;
+    margin-bottom: 45px;
 }
 
 .manifesto {
-    padding: 120px 0;
-    text-align: center;
+    padding: 100px 0;
+    background: #fff;
 }
 
 .manifesto h2 {
     font-family: var(--font-serif);
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 400;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .manifesto p {
-    font-size: 20px;
-    max-width: 750px;
-    margin: 0 auto;
+    font-size: 18px;
+    max-width: 800px;
     color: var(--text-muted);
-    font-weight: 300;
 }
 
-/* Grids & Cards */
+/* Grilles techniques */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
     border: 1px solid var(--border-color);
-    padding: 40px;
+    padding: 35px;
     background: #fff;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .card:hover {
@@ -170,17 +203,18 @@ nav a:hover, nav a.active {
 
 .card h3 {
     font-family: var(--font-serif);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .card p {
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-/* Portfolio */
+/* Portfolio Layout */
 .portfolio-grid .card {
     padding: 0;
     border: none;
@@ -188,72 +222,63 @@ nav a:hover, nav a.active {
 
 .portfolio-grid .card h3 {
     margin-top: 15px;
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 18px;
+    margin-bottom: 4px;
 }
 
 .portfolio-grid .card span {
     font-size: 13px;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .placeholder-img {
-    aspect-ratio: 4/3;
-    background: #f5f5f5;
-    transition: opacity 0.3s ease;
+    aspect-ratio: 16/10;
+    background: #eee;
+    border: 1px solid var(--border-color);
 }
 
-.portfolio-grid .card:hover .placeholder-img {
-    opacity: 0.8;
-}
-
-/* Formulaires & Contact */
+/* Formulaires d'études */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
 }
 
 .contact-info p {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-muted);
-    margin-top: 20px;
-    font-weight: 300;
+    margin-top: 15px;
 }
 
 .form-project {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .form-group label {
     font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: var(--text-muted);
 }
 
 input, textarea {
-    padding: 16px;
+    padding: 12px;
     border: 1px solid var(--border-color);
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: 14px;
     background: #fff;
     outline: none;
-    transition: border-color 0.3s ease;
 }
 
 input:focus, textarea:focus {
-    border-color: var(--accent-color);
+    border-color: var(--text-color);
 }
 
 .btn-submit {
@@ -264,18 +289,19 @@ input:focus, textarea:focus {
 footer {
     background: #111;
     color: #fff;
-    padding: 60px;
+    padding: 40px 20px;
     text-align: center;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    header { padding: 20px 30px; flex-direction: column; gap: 15px; }
-    nav a { margin: 0 10px; }
-    .hero h1 { font-size: 60px; }
-    .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
-    .page-content { padding-top: 40px; }
+/* Layout Mobile Adaptatif */
+@media (max-width: 800px) {
+    header { padding: 20px; flex-direction: column; gap: 20px; }
+    nav a { margin: 0 10px; font-size: 12px; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero-text h1 { font-size: 36px; }
+    .blueprint-vector { max-width: 300px; margin-bottom: 20px; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 30px; }
 }
