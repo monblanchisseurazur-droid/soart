@@ -24,59 +24,56 @@
     <main>
         <section class="hero">
             <div class="hero-container">
-                <!-- Nouveau dessin technique : Maison, lignes de plans et mesures -->
+                <!-- Nouveau dessin : Plan technique de rénovation / Cloisonnement -->
                 <div class="blueprint-vector">
                     <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Sol / Ligne de terre -->
-                        <line x1="20" y1="240" x2="380" y2="240" stroke="#b0b0b0" stroke-width="1.5"/>
+                        <!-- Périmètre des murs porteurs existants (Lignes épaisses) -->
+                        <rect x="50" y="40" width="300" height="200" stroke="#111111" stroke-width="2.5"/>
                         
-                        <!-- Structure de la maison (Lignes principales) -->
-                        <!-- Mur gauche -->
-                        <line x1="80" y1="240" x2="80" y2="130" stroke="#111111" stroke-width="1.2"/>
-                        <!-- Mur droit -->
-                        <line x1="320" y1="240" x2="320" y2="130" stroke="#111111" stroke-width="1.2"/>
-                        <!-- Toit monopente moderne / Contemporain -->
-                        <line x1="80" y1="130" x2="320" y2="90" stroke="#111111" stroke-width="1.5"/>
+                        <!-- Cloisons intérieures conservées -->
+                        <line x1="170" y1="40" x2="170" y2="130" stroke="#111111" stroke-width="1.5"/>
+                        <line x1="50" y1="130" x2="170" y2="130" stroke="#111111" stroke-width="1.5"/>
                         
-                        <!-- Lignes de repères et de cotes (Prolongements fins de dessin) -->
-                        <line x1="50" y1="130" x2="350" y2="130" stroke="#e0e0e0" stroke-width="0.8"/>
-                        <line x1="50" y1="90" x2="350" y2="90" stroke="#e0e0e0" stroke-width="0.8"/>
-                        <line x1="80" y1="60" x2="80" y2="260" stroke="#e0e0e0" stroke-width="0.8"/>
-                        <line x1="320" y1="60" x2="320" y2="260" stroke="#e0e0e0" stroke-width="0.8"/>
+                        <!-- Cloison abattue / Ouverture créée (Pointillés de chantier) -->
+                        <line x1="170" y1="130" x2="170" y2="240" stroke="#b0b0b0" stroke-width="1.5" stroke-dasharray="4 4"/>
                         
-                        <!-- Lignes de mesures croisées (Pointillés) -->
-                        <line x1="200" y1="40" x2="200" y2="260" stroke="#b0b0b0" stroke-width="0.8" stroke-dasharray="4 4"/>
-                        <line x1="40" y1="170" x2="360" y2="170" stroke="#b0b0b0" stroke-width="0.8" stroke-dasharray="4 4"/>
+                        <!-- Agencement sur mesure dessiné (Ex: Plan de cuisine / Dressing) -->
+                        <rect x="250" y="40" width="100" height="40" stroke="#999999" stroke-width="1" stroke-dasharray="2 2"/>
+                        <line x1="250" y1="60" x2="350" y2="60" stroke="#999999" stroke-width="1" stroke-dasharray="2 2"/>
                         
-                        <!-- Flèches / Repères de niveau d'architecte sur les côtés -->
-                        <path d="M 50 170 L 55 165 M 50 170 L 55 175" stroke="#111111" stroke-width="1"/>
-                        <path d="M 350 170 L 345 165 M 350 170 L 345 175" stroke="#111111" stroke-width="1"/>
-                        <path d="M 200 50 L 195 55 M 200 50 L 205 55" stroke="#111111" stroke-width="1"/>
+                        <!-- Repères de mesures et lignes de cotes de maçonnerie -->
+                        <line x1="30" y1="40" x2="30" y2="240" stroke="#cccccc" stroke-width="0.8"/>
+                        <line x1="25" y1="40" x2="35" y2="40" stroke="#cccccc" stroke-width="0.8"/>
+                        <line x1="25" y1="240" x2="35" y2="240" stroke="#cccccc" stroke-width="0.8"/>
                         
-                        <!-- Détail d'ouverture / Baie vitrée minimaliste mesurée -->
-                        <rect x="130" y="160" width="140" height="80" stroke="#b0b0b0" stroke-width="1"/>
-                        <line x1="200" y1="160" x2="200" y2="240" stroke="#b0b0b0" stroke-width="0.8"/>
+                        <line x1="50" y1="260" x2="170" y2="260" stroke="#cccccc" stroke-width="0.8"/>
+                        <line x1="50" y1="255" x2="50" y2="265" stroke="#cccccc" stroke-width="0.8"/>
+                        <line x1="170" y1="255" x2="170" y2="265" stroke="#cccccc" stroke-width="0.8"/>
+                        
+                        <!-- Symbole d'ouverture de porte (Arc de cercle technique) -->
+                        <path d="M 170 90 A 40 40 0 0 1 130 130" stroke="#111111" stroke-width="1" fill="none"/>
+                        <line x1="170" y1="90" x2="170" y2="130" stroke="#111111" stroke-width="1"/>
                     </svg>
                 </div>
                 
                 <div class="hero-text">
-                    <p class="tagline">De l'esquisse à la réalisation</p>
+                    <p class="tagline">De l'étude technique à la livraison</p>
                     <h1>Rénovation d'intérieur</h1>
-                    <a class="btn" href="contact.html">Demander une étude technique</a>
+                    <a class="btn" href="contact.html">Étudier votre projet de travaux</a>
                 </div>
             </div>
         </section>
 
         <section class="manifesto">
             <div class="container">
-                <h2>La rigueur du plan, l'exactitude du chantier</h2>
-                <p>De la restructuration complète des volumes à la livraison des ouvrages, notre démarche s'appuie sur une planification rigoureuse, la sélection de matériaux pérennes et une coordination exigeante des corps d'état.</p>
+                <h2>La maîtrise de l'espace, l'expertise des matériaux</h2>
+                <p>Spécialisé dans la rénovation complète et l'agencement sur mesure, notre atelier prend en charge l'intégralité de vos travaux. Nous traduisons vos besoins en solutions concrètes grâce à un suivi de chantier rigoureux et des finitions soignées.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; SoArt Atelier Côte d'Azur — Architecture & Rénovation</p>
+        <p>&copy; SoArt Atelier Côte d'Azur — Rénovation d'intérieur & Agencement</p>
     </footer>
 </body>
 </html>
