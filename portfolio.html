@@ -103,7 +103,7 @@
             </div>
             
             <div class="card item clickable-card" id="open-gallery">
-                <img src="img_0320.jpg" alt="Appartement Privé Antibes">
+                <img src="IMG_0320%20(1).jpg" alt="Appartement Privé Antibes">
                 <h3>Appartement Privé</h3>
                 <span>Antibes, France</span>
             </div>
@@ -137,18 +137,18 @@
     </footer>
 
     <script>
-        // Liste ordonnée de tes photos renommées sans espaces ni parenthèses
+        // Liste ordonnée utilisant l'encodage d'URL pour que GitHub lise correctement les fichiers
         const images = [
-            "img_0320.jpg", // L'avant-dernière s'affiche bien en premier
-            "img_0321.jpg",
-            "img_0316.jpg",
-            "img_0314.jpg",
-            "img_0317.jpg",
-            "img_0327.jpg",
-            "img_0326.jpg",
-            "img_0315.jpg",
-            "img_0319.jpg",
-            "img_0322.jpg"
+            "IMG_0320%20(1).jpg", // L'avant-dernière en premier
+            "IMG_0321%20(1).jpg",
+            "IMG_0316%20(1).jpg",
+            "IMG_0314%20(1).jpg",
+            "IMG_0317%20(1).jpg",
+            "IMG_0327%20(1).jpg",
+            "IMG_0326%20(1).jpg",
+            "IMG_0315%20(1).jpg",
+            "IMG_0319%20(1).jpg",
+            "IMG_0322%20(1).jpg"
         ];
 
         let currentIndex = 0;
@@ -165,7 +165,7 @@
         }
 
         openBtn.addEventListener('click', () => {
-            currentIndex = 0;
+            currentIndex = 0; 
             updateLightboxImage();
             lightbox.style.display = 'flex';
         });
