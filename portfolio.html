@@ -103,7 +103,7 @@
             </div>
             
             <div class="card item clickable-card" id="open-gallery">
-                <img src="IMG_0320%20(1).jpg" alt="Appartement Privé Antibes">
+                <img src="IMG_0320 (1).jpg" alt="Appartement Privé Antibes">
                 <h3>Appartement Privé</h3>
                 <span>Antibes, France</span>
             </div>
@@ -137,18 +137,18 @@
     </footer>
 
     <script>
-        // Liste ordonnée utilisant l'encodage d'URL pour que GitHub lise correctement les fichiers
+        // Liste ordonnée utilisant les noms réels et exacts de vos fichiers sur votre ordinateur
         const images = [
-            "IMG_0320%20(1).jpg", // L'avant-dernière en premier
-            "IMG_0321%20(1).jpg",
-            "IMG_0316%20(1).jpg",
-            "IMG_0314%20(1).jpg",
-            "IMG_0317%20(1).jpg",
-            "IMG_0327%20(1).jpg",
-            "IMG_0326%20(1).jpg",
-            "IMG_0315%20(1).jpg",
-            "IMG_0319%20(1).jpg",
-            "IMG_0322%20(1).jpg"
+            "IMG_0320 (1).jpg", // L'avant-dernière en premier
+            "IMG_0321 (1).jpg",
+            "IMG_0316 (1).jpg",
+            "IMG_0314 (1).jpg",
+            "IMG_0317 (1).jpg",
+            "IMG_0327 (1).jpg",
+            "IMG_0326 (1).jpg",
+            "IMG_0315 (1).jpg",
+            "IMG_0319 (1).jpg",
+            "IMG_0322 (1).jpg"
         ];
 
         let currentIndex = 0;
@@ -161,7 +161,8 @@
         const nextBtn = document.getElementById('lightbox-next');
 
         function updateLightboxImage() {
-            lightboxImg.src = images[currentIndex];
+            // encodeURI gère automatiquement la conversion de l'espace pour le web sans bloquer le local
+            lightboxImg.src = encodeURI(images[currentIndex]);
         }
 
         openBtn.addEventListener('click', () => {
