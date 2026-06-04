@@ -96,29 +96,24 @@
         <h1>Réalisations</h1>
         <div class="grid portfolio-grid">
             
-            <!-- VILLA CONTEMPORAINE (Inchangé) -->
             <div class="card item">
                 <div class="placeholder-img"></div>
                 <h3>Villa Contemporaine</h3>
                 <span>Nice, France</span>
             </div>
             
-            <!-- APPARTEMENT PRIVÉ (ANTIBES) - AVEC DIAPORAMA -->
             <div class="card item clickable-card" id="open-gallery">
-                <!-- Image de couverture : l'avant-dernière (IMG_0320.jpg) -->
-                <img src="IMG_0320 (1).jpg" alt="Appartement Privé Antibes">
+                <img src="img_0320.jpg" alt="Appartement Privé Antibes">
                 <h3>Appartement Privé</h3>
                 <span>Antibes, France</span>
             </div>
             
-            <!-- ESPACE COMMERCIAL (Inchangé) -->
             <div class="card item">
                 <div class="placeholder-img"></div>
                 <h3>Espace Commercial</h3>
                 <span>Cannes, France</span>
             </div>
             
-            <!-- PROJET RÉSIDENTIEL (Inchangé) -->
             <div class="card item">
                 <div class="placeholder-img"></div>
                 <h3>Projet Résidentiel</h3>
@@ -128,7 +123,6 @@
         </div>
     </main>
 
-    <!-- Structure du Diaporama (Lightbox hidden par défaut) -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
             <span class="lightbox-close" id="lightbox-close">&times;</span>
@@ -142,20 +136,19 @@
         <p>&copy; SoArt Atelier Côte d'Azur</p>
     </footer>
 
-    <!-- Script du Diaporama -->
     <script>
-        // Liste ordonnée de tes photos avec l'avant-dernière en PREMIER
+        // Liste ordonnée de tes photos renommées sans espaces ni parenthèses
         const images = [
-            "IMG_0320 (1).jpg", // L'avant-dernière en premier
-            "IMG_0321 (1).jpg",
-            "IMG_0316 (1).jpg",
-            "IMG_0314 (1).jpg",
-            "IMG_0317 (1).jpg",
-            "IMG_0327 (1).jpg",
-            "IMG_0326 (1).jpg",
-            "IMG_0315 (1).jpg",
-            "IMG_0319 (1).jpg",
-            "IMG_0322 (1).jpg"
+            "img_0320.jpg", // L'avant-dernière s'affiche bien en premier
+            "img_0321.jpg",
+            "img_0316.jpg",
+            "img_0314.jpg",
+            "img_0317.jpg",
+            "img_0327.jpg",
+            "img_0326.jpg",
+            "img_0315.jpg",
+            "img_0319.jpg",
+            "img_0322.jpg"
         ];
 
         let currentIndex = 0;
@@ -172,7 +165,7 @@
         }
 
         openBtn.addEventListener('click', () => {
-            currentIndex = 0; // Ouvre sur la première image de la liste (IMG_0320)
+            currentIndex = 0;
             updateLightboxImage();
             lightbox.style.display = 'flex';
         });
@@ -181,7 +174,6 @@
             lightbox.style.display = 'none';
         });
 
-        // Fermer en cliquant à côté de l'image
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
@@ -200,7 +192,6 @@
             updateLightboxImage();
         });
 
-        // Navigation avec les touches du clavier
         document.addEventListener('keydown', (e) => {
             if (lightbox.style.display === 'flex') {
                 if (e.key === 'ArrowRight') nextBtn.click();
