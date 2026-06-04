@@ -27,11 +27,16 @@
             align-items: center;
             justify-content: center;
         }
+        /* Toutes les images du diaporama sont superposées, seule l'active est visible */
         .lightbox-img {
+            display: none;
             max-width: 100%;
             max-height: 85vh;
             object-fit: contain;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .lightbox-img.active {
+            display: block;
         }
         .lightbox-close {
             position: absolute;
@@ -54,6 +59,7 @@
             background: rgba(0,0,0,0.2);
             padding: 10px 15px;
             transition: background 0.2s;
+            z-index: 1010;
         }
         .lightbox-prev { left: -60px; }
         .lightbox-next { right: -60px; }
@@ -77,7 +83,7 @@
         @media (max-width: 768px) {
             .lightbox-prev { left: 10px; background: rgba(0,0,0,0.5); }
             .lightbox-next { right: 10px; background: rgba(0,0,0,0.5); }
-            .lightbox-close { top: 20px; right: 20px; z-index: 1010; }
+            .lightbox-close { top: 20px; right: 20px; z-index: 1020; }
         }
     </style>
 </head>
@@ -103,7 +109,7 @@
             </div>
             
             <div class="card item clickable-card" id="open-gallery">
-                <img src="IMG_0320 (1).jpg" alt="Appartement Privé Antibes">
+                <img src="IMG_0320 (1).jpg" onerror="this.onerror=null; this.src='IMG_0320 (1).JPG';" alt="Appartement Privé Antibes">
                 <h3>Appartement Privé</h3>
                 <span>Antibes, France</span>
             </div>
@@ -127,7 +133,18 @@
         <div class="lightbox-content">
             <span class="lightbox-close" id="lightbox-close">&times;</span>
             <span class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</span>
-            <img src="" class="lightbox-img" id="lightbox-img" alt="Vue chantier Antibes">
+            
+            <img src="IMG_0320 (1).jpg" onerror="this.onerror=null; this.src='IMG_0320 (1).JPG';" class="lightbox-img active" alt="Chantier Antibes">
+            <img src="IMG_0321 (1).jpg" onerror="this.onerror=null; this.src='IMG_0321 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0316 (1).jpg" onerror="this.onerror=null; this.src='IMG_0316 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0314 (1).jpg" onerror="this.onerror=null; this.src='IMG_0314 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0317 (1).jpg" onerror="this.onerror=null; this.src='IMG_0317 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0327 (1).jpg" onerror="this.onerror=null; this.src='IMG_0327 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0326 (1).jpg" onerror="this.onerror=null; this.src='IMG_0326 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0315 (1).jpg" onerror="this.onerror=null; this.src='IMG_0315 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0319 (1).jpg" onerror="this.onerror=null; this.src='IMG_0319 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <img src="IMG_0322 (1).jpg" onerror="this.onerror=null; this.src='IMG_0322 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+
             <span class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</span>
         </div>
     </div>
@@ -137,37 +154,28 @@
     </footer>
 
     <script>
-        // Liste ordonnée utilisant les noms réels et exacts de vos fichiers sur votre ordinateur
-        const images = [
-            "IMG_0320 (1).jpg", // L'avant-dernière en premier
-            "IMG_0321 (1).jpg",
-            "IMG_0316 (1).jpg",
-            "IMG_0314 (1).jpg",
-            "IMG_0317 (1).jpg",
-            "IMG_0327 (1).jpg",
-            "IMG_0326 (1).jpg",
-            "IMG_0315 (1).jpg",
-            "IMG_0319 (1).jpg",
-            "IMG_0322 (1).jpg"
-        ];
-
         let currentIndex = 0;
 
         const openBtn = document.getElementById('open-gallery');
         const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.getElementById('lightbox-close');
         const prevBtn = document.getElementById('lightbox-prev');
         const nextBtn = document.getElementById('lightbox-next');
+        
+        // On récupère directement les éléments du DOM pré-chargés
+        const slideImages = document.querySelectorAll('.lightbox-img');
 
-        function updateLightboxImage() {
-            // encodeURI gère automatiquement la conversion de l'espace pour le web sans bloquer le local
-            lightboxImg.src = encodeURI(images[currentIndex]);
+        function changeSlide(nextIndex) {
+            // Retire la classe active de l'ancienne image
+            slideImages[currentIndex].classList.remove('active');
+            // Met à jour l'index
+            currentIndex = nextIndex;
+            // Ajoute la classe active sur la nouvelle image
+            slideImages[currentIndex].classList.add('active');
         }
 
         openBtn.addEventListener('click', () => {
-            currentIndex = 0; 
-            updateLightboxImage();
+            changeSlide(0); // Ouvre toujours sur la première (IMG_0320)
             lightbox.style.display = 'flex';
         });
 
@@ -183,14 +191,14 @@
 
         nextBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            currentIndex = (currentIndex + 1) % images.length;
-            updateLightboxImage();
+            let next = (currentIndex + 1) % slideImages.length;
+            changeSlide(next);
         });
 
         prevBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateLightboxImage();
+            let prev = (currentIndex - 1 + slideImages.length) % slideImages.length;
+            changeSlide(prev);
         });
 
         document.addEventListener('keydown', (e) => {
