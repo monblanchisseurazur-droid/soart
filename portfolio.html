@@ -5,6 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | SoArt Atelier</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Styles épurés pour le diaporama (Lightbox) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 85%;
+            max-height: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            font-weight: 300;
+            transition: opacity 0.2s;
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 35px;
+            cursor: pointer;
+            user-select: none;
+            background: rgba(0,0,0,0.2);
+            padding: 10px 15px;
+            transition: background 0.2s;
+        }
+        .lightbox-prev { left: -60px; }
+        .lightbox-next { right: -60px; }
+        .lightbox-nav:hover, .lightbox-close:hover { opacity: 0.7; }
+        
+        /* Ajustement de la carte cliquable */
+        .clickable-card {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .clickable-card:hover {
+            transform: translateY(-2px);
+        }
+        .clickable-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-prev { left: 10px; background: rgba(0,0,0,0.5); }
+            .lightbox-next { right: 10px; background: rgba(0,0,0,0.5); }
+            .lightbox-close { top: 20px; right: 20px; z-index: 1010; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,31 +95,119 @@
     <main class="container page-content">
         <h1>Réalisations</h1>
         <div class="grid portfolio-grid">
+            
+            <!-- VILLA CONTEMPORAINE (Inchangé) -->
             <div class="card item">
                 <div class="placeholder-img"></div>
                 <h3>Villa Contemporaine</h3>
                 <span>Nice, France</span>
             </div>
-            <div class="card item">
-                <div class="placeholder-img"></div>
+            
+            <!-- APPARTEMENT PRIVÉ (ANTIBES) - AVEC DIAPORAMA -->
+            <div class="card item clickable-card" id="open-gallery">
+                <!-- Image de couverture : l'avant-dernière (IMG_0320 (1).jpg) -->
+                <img src="IMG_0320 (1).jpg" alt="Appartement Privé Antibes">
                 <h3>Appartement Privé</h3>
                 <span>Antibes, France</span>
             </div>
+            
+            <!-- ESPACE COMMERCIAL (Inchangé) -->
             <div class="card item">
                 <div class="placeholder-img"></div>
                 <h3>Espace Commercial</h3>
                 <span>Cannes, France</span>
             </div>
+            
+            <!-- PROJET RÉSIDENTIEL (Inchangé) -->
             <div class="card item">
                 <div class="placeholder-img"></div>
                 <h3>Projet Résidentiel</h3>
                 <span>Saint-Jean-Cap-Ferrat, France</span>
             </div>
+
         </div>
     </main>
+
+    <!-- Structure du Diaporama (Lightbox hidden par défaut) -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+            <span class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</span>
+            <img src="" class="lightbox-img" id="lightbox-img" alt="Vue chantier Antibes">
+            <span class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</span>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; SoArt Atelier Côte d'Azur</p>
     </footer>
+
+    <!-- Script du Diaporama -->
+    <script>
+        // Liste ordonnée de tes photos avec l'avant-dernière en PREMIER
+        const images = [
+            "IMG_0320 (1).jpg", // L'avant-dernière en premier
+            "IMG_0321 (1).jpg",
+            "IMG_0316 (1).jpg",
+            "IMG_0314 (1).jpg",
+            "IMG_0317 (1).jpg",
+            "IMG_0327 (1).jpg",
+            "IMG_0326 (1).jpg",
+            "IMG_0315 (1).jpg",
+            "IMG_0319 (1).jpg",
+            "IMG_0322 (1).jpg"
+        ];
+
+        let currentIndex = 0;
+
+        const openBtn = document.getElementById('open-gallery');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+
+        function updateLightboxImage() {
+            lightboxImg.src = images[currentIndex];
+        }
+
+        openBtn.addEventListener('click', () => {
+            currentIndex = 0; // Ouvre sur la première image de la liste (IMG_0320)
+            updateLightboxImage();
+            lightbox.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Fermer en cliquant à côté de l'image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightboxImage();
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightboxImage();
+        });
+
+        // Navigation avec les touches du clavier
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'ArrowRight') nextBtn.click();
+                if (e.key === 'ArrowLeft') prevBtn.click();
+                if (e.key === 'Escape') closeBtn.click();
+            }
+        });
+    </script>
 </body>
 </html>
