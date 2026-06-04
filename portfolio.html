@@ -6,7 +6,7 @@
     <title>Portfolio | SoArt Atelier</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Styles épurés pour le diaporama (Lightbox) */
+        /* Styles pour le diaporama (Lightbox) */
         .lightbox {
             display: none;
             position: fixed;
@@ -27,7 +27,6 @@
             align-items: center;
             justify-content: center;
         }
-        /* Toutes les images du diaporama sont superposées, seule l'active est visible */
         .lightbox-img {
             display: none;
             max-width: 100%;
@@ -65,7 +64,7 @@
         .lightbox-next { right: -60px; }
         .lightbox-nav:hover, .lightbox-close:hover { opacity: 0.7; }
         
-        /* Ajustement de la carte cliquable */
+        /* Ajustement des cartes cliquables */
         .clickable-card {
             cursor: pointer;
             transition: transform 0.2s ease;
@@ -102,27 +101,27 @@
         <h1>Réalisations</h1>
         <div class="grid portfolio-grid">
             
-            <div class="card item">
-                <div class="placeholder-img"></div>
+            <div class="card item clickable-card" data-gallery="villa">
+                <img src="villa1.jpg" onerror="this.onerror=null; this.src='villa1.JPG';" alt="Villa Contemporaine Nice">
                 <h3>Villa Contemporaine</h3>
                 <span>Nice, France</span>
             </div>
             
-            <div class="card item clickable-card" id="open-gallery">
+            <div class="card item clickable-card" data-gallery="antibes">
                 <img src="IMG_0320 (1).jpg" onerror="this.onerror=null; this.src='IMG_0320 (1).JPG';" alt="Appartement Privé Antibes">
                 <h3>Appartement Privé</h3>
                 <span>Antibes, France</span>
             </div>
             
-            <div class="card item">
-                <div class="placeholder-img"></div>
+            <div class="card item clickable-card" data-gallery="commercial">
+                <img src="commerce1.jpg" onerror="this.onerror=null; this.src='commerce1.JPG';" alt="Espace Commercial Cannes">
                 <h3>Espace Commercial</h3>
                 <span>Cannes, France</span>
             </div>
             
-            <div class="card item">
-                <div class="placeholder-img"></div>
-                <h3>Projet Résidentiel</h3>
+            <div class="card item clickable-card" data-gallery="escalier">
+                <img src="escalier1.jpg" onerror="this.onerror=null; this.src='escalier1.JPG';" alt="Création d'escalier sur mesure">
+                <h3>Création d'escalier sur mesure</h3>
                 <span>Saint-Jean-Cap-Ferrat, France</span>
             </div>
 
@@ -134,16 +133,8 @@
             <span class="lightbox-close" id="lightbox-close">&times;</span>
             <span class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</span>
             
-            <img src="IMG_0320 (1).jpg" onerror="this.onerror=null; this.src='IMG_0320 (1).JPG';" class="lightbox-img active" alt="Chantier Antibes">
-            <img src="IMG_0321 (1).jpg" onerror="this.onerror=null; this.src='IMG_0321 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0316 (1).jpg" onerror="this.onerror=null; this.src='IMG_0316 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0314 (1).jpg" onerror="this.onerror=null; this.src='IMG_0314 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0317 (1).jpg" onerror="this.onerror=null; this.src='IMG_0317 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0327 (1).jpg" onerror="this.onerror=null; this.src='IMG_0327 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0326 (1).jpg" onerror="this.onerror=null; this.src='IMG_0326 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0315 (1).jpg" onerror="this.onerror=null; this.src='IMG_0315 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0319 (1).jpg" onerror="this.onerror=null; this.src='IMG_0319 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
-            <img src="IMG_0322 (1).jpg" onerror="this.onerror=null; this.src='IMG_0322 (1).JPG';" class="lightbox-img" alt="Chantier Antibes">
+            <div id="lightbox-images-container">
+                </div>
 
             <span class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</span>
         </div>
@@ -154,60 +145,33 @@
     </footer>
 
     <script>
-        let currentIndex = 0;
+        // CENTRALISATION DE VOS IMAGES
+        const gallerieListes = {
+            villa: [
+                "villa1.jpg",
+                "villa2.jpg"
+            ],
+            antibes: [
+                "IMG_0320 (1).jpg",
+                "IMG_0321 (1).jpg",
+                "IMG_0316 (1).jpg",
+                "IMG_0314 (1).jpg",
+                "IMG_0317 (1).jpg",
+                "IMG_0327 (1).jpg",
+                "IMG_0326 (1).jpg",
+                "IMG_0315 (1).jpg",
+                "IMG_0319 (1).jpg",
+                "IMG_0322 (1).jpg"
+            ],
+            commercial: [
+                "commerce1.jpg",
+                "commerce2.jpg"
+            ],
+            escalier: [
+                // Ajoute ici la liste des images pour l'escalier quand tu le souhaites :
+                "escalier1.jpg",
+                "escalier2.jpg"
+            ]
+        };
 
-        const openBtn = document.getElementById('open-gallery');
-        const lightbox = document.getElementById('lightbox');
-        const closeBtn = document.getElementById('lightbox-close');
-        const prevBtn = document.getElementById('lightbox-prev');
-        const nextBtn = document.getElementById('lightbox-next');
-        
-        // On récupère directement les éléments du DOM pré-chargés
-        const slideImages = document.querySelectorAll('.lightbox-img');
-
-        function changeSlide(nextIndex) {
-            // Retire la classe active de l'ancienne image
-            slideImages[currentIndex].classList.remove('active');
-            // Met à jour l'index
-            currentIndex = nextIndex;
-            // Ajoute la classe active sur la nouvelle image
-            slideImages[currentIndex].classList.add('active');
-        }
-
-        openBtn.addEventListener('click', () => {
-            changeSlide(0); // Ouvre toujours sur la première (IMG_0320)
-            lightbox.style.display = 'flex';
-        });
-
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-
-        nextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            let next = (currentIndex + 1) % slideImages.length;
-            changeSlide(next);
-        });
-
-        prevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            let prev = (currentIndex - 1 + slideImages.length) % slideImages.length;
-            changeSlide(prev);
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'ArrowRight') nextBtn.click();
-                if (e.key === 'ArrowLeft') prevBtn.click();
-                if (e.key === 'Escape') closeBtn.click();
-            }
-        });
-    </script>
-</body>
-</html>
+        let currentImages =
