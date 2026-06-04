@@ -24,39 +24,44 @@
     <main>
         <section class="hero">
             <div class="hero-container">
-                <!-- Nouveau dessin équilibré : Structure, mesures et truelle technique -->
+                <!-- Nouveau dessin : Structure de maison en travaux enveloppée d'un échafaudage technique -->
                 <div class="blueprint-vector">
                     <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Ligne de sol / Niveau 0.00 -->
-                        <line x1="30" y1="230" x2="370" y2="230" stroke="#b0b0b0" stroke-width="1.5" />
+                        <!-- Ligne de sol / Terre plate du chantier -->
+                        <line x1="20" y1="240" x2="380" y2="240" stroke="#b0b0b0" stroke-width="1.5" />
                         
-                        <!-- Structure du bâtiment en rénovation -->
-                        <rect x="70" y="110" width="160" height="120" stroke="#111111" stroke-width="1.8" />
-                        <!-- Toiture moderne / Lignes de maçonnerie -->
-                        <line x1="70" y1="110" x2="230" y2="70" stroke="#111111" stroke-width="2" />
+                        <!-- Structure principale de la bâtisse (lignes de maçonnerie) -->
+                        <rect x="90" y="110" width="180" height="130" stroke="#111111" stroke-width="1.8" />
+                        <polygon points="90,110 180,60 270,110" stroke="#111111" stroke-width="2" fill="none" />
                         
-                        <!-- Lignes de cotes et mesures d'artisan (Pointillés et flèches) -->
-                        <line x1="50" y1="70" x2="250" y2="70" stroke="#cccccc" stroke-width="0.8" stroke-dasharray="4 4" />
-                        <line x1="70" y1="50" x2="70" y2="250" stroke="#cccccc" stroke-width="0.8" stroke-dasharray="4 4" />
-                        <line x1="230" y1="50" x2="230" y2="250" stroke="#cccccc" stroke-width="0.8" stroke-dasharray="4 4" />
-                        
-                        <!-- Repères de mesures aux angles -->
-                        <path d="M 65 70 L 75 70" stroke="#111111" stroke-width="1" />
-                        <path d="M 225 70 L 235 70" stroke="#111111" stroke-width="1" />
-                        
-                        <!-- Truelle technique minimaliste intégrée au plan (symbole du savoir-faire) -->
-                        <g transform="translate(240, 100)">
-                            <!-- Lame de la truelle (Triangle épuré) -->
-                            <path d="M 10 70 L 70 40 L 40 10 Z" stroke="#111111" stroke-width="1.5" fill="none" />
-                            <!-- Tige de la truelle -->
-                            <path d="M 30 30 L 15 15 L 5 15" stroke="#111111" stroke-width="1.5" fill="none" />
-                            <!-- Manche en bois (représenté de façon sobre) -->
-                            <rect x="-15" y="12" width="20" height="6" rx="2" stroke="#111111" stroke-width="1.2" />
-                        </g>
+                        <!-- Baies vitrées / Ouvertures en cours de pose -->
+                        <rect x="120" y="140" width="40" height="60" stroke="#b0b0b0" stroke-width="1" />
+                        <rect x="200" y="140" width="40" height="60" stroke="#b0b0b0" stroke-width="1" />
+                        <rect x="160" y="85" width="40" height="25" stroke="#b0b0b0" stroke-width="1" />
 
-                        <!-- Lignes d'élévation symbolisant la transformation / le chantier -->
-                        <line x1="70" y1="170" x2="230" y2="170" stroke="#b0b0b0" stroke-width="1" stroke-dasharray="2 2" />
-                        <line x1="150" y1="110" x2="150" y2="230" stroke="#b0b0b0" stroke-width="1" stroke-dasharray="2 2" />
+                        <!-- Structure de l'Échafaudage (Inspiré de image_31b7a0.jpg) -->
+                        <!-- Poteaux verticaux de l'échafaudage (dépassent du toit) -->
+                        <line x1="70" y1="40" x2="70" y2="240" stroke="#111111" stroke-width="1" />
+                        <line x1="150" y1="40" x2="150" y2="240" stroke="#cccccc" stroke-width="0.8" />
+                        <line x1="210" y1="40" x2="210" y2="240" stroke="#cccccc" stroke-width="0.8" />
+                        <line x1="290" y1="40" x2="290" y2="240" stroke="#111111" stroke-width="1" />
+                        
+                        <!-- Planchers horizontaux de travail (Niveaux de l'échafaudage) -->
+                        <!-- Niveau 1 -->
+                        <line x1="60" y1="180" x2="300" y2="180" stroke="#111111" stroke-width="1.2" />
+                        <!-- Niveau 2 -->
+                        <line x1="60" y1="120" x2="300" y2="120" stroke="#111111" stroke-width="1.2" />
+                        <!-- Niveau 3 (Toiture) -->
+                        <line x1="60" y1="65" x2="300" y2="65" stroke="#111111" stroke-width="1.2" />
+
+                        <!-- Diagonales de contreventement / Sécurité du chantier -->
+                        <line x1="70" y1="120" x2="150" y2="180" stroke="#b0b0b0" stroke-width="0.8" />
+                        <line x1="210" y1="120" x2="290" y2="180" stroke="#b0b0b0" stroke-width="0.8" />
+                        <line x1="70" y1="65" x2="150" y2="120" stroke="#b0b0b0" stroke-width="0.8" />
+                        
+                        <!-- Cotes techniques et pointillés d'alignement -->
+                        <line x1="330" y1="60" x2="330" y2="240" stroke="#b0b0b0" stroke-width="0.8" stroke-dasharray="3 3" />
+                        <path d="M 325 60 L 335 60 M 325 240 L 335 240" stroke="#b0b0b0" stroke-width="0.8" />
                     </svg>
                 </div>
                 
