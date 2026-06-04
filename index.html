@@ -3,12 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoArt Atelier | Architecture & Rénovation Intérieure</title>
+    <title>SoArt Atelier | Architecture d'intérieur & Rénovation</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="logo">SoArt</div>
+        <div class="brand-logo">
+            <span class="main-title">SoArt</span>
+            <span class="sub-title-1">ATELIER</span>
+            <span class="sub-title-2">CÔTE D'AZUR</span>
+        </div>
         <nav>
             <a href="index.html" class="active">Accueil</a>
             <a href="services.html">Services</a>
@@ -19,24 +23,45 @@
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h1>SoArt</h1>
-                <h2>ATELIER CÔTE D'AZUR</h2>
-                <p>Architecture d'intérieur et rénovation globale.</p>
-                <a class="btn" href="contact.html">Demander une étude</a>
+            <div class="hero-container">
+                <!-- Dessin minimaliste d'architecture et de structure (SVG) -->
+                <div class="blueprint-vector">
+                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Lignes de fuite / Perspective de pièce -->
+                        <line x1="10" y1="240" x2="130" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+                        <line x1="390" y1="240" x2="270" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+                        <line x1="130" y1="160" x2="270" y2="160" stroke="#b0b0b0" stroke-width="1.5"/>
+                        <!-- Structure / Cloisonnement -->
+                        <rect x="130" y="40" width="140" height="120" stroke="#b0b0b0" stroke-width="1.5"/>
+                        <line x1="10" y1="10" x2="130" y2="40" stroke="#e0e0e0" stroke-width="1"/>
+                        <line x1="390" y1="10" x2="270" y2="40" stroke="#e0e0e0" stroke-width="1"/>
+                        <!-- Lignes d'élévation et cotes techniques -->
+                        <line x1="200" y1="10" x2="200" y2="230" stroke="#111111" stroke-width="0.8" stroke-dasharray="4 4"/>
+                        <line x1="60" y1="110" x2="340" y2="110" stroke="#111111" stroke-width="0.8" stroke-dasharray="4 4"/>
+                        <!-- Repères d'angle d'architecte -->
+                        <path d="M120,40 L130,40 L130,50" stroke="#111111" stroke-width="1.5" fill="none"/>
+                        <path d="M280,40 L270,40 L270,50" stroke="#111111" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </div>
+                
+                <div class="hero-text">
+                    <p class="tagline">Conception structurelle & Maîtrise d'œuvre</p>
+                    <h1>Rénovation intégrale d'intérieurs</h1>
+                    <a class="btn" href="contact.html">Demander une étude technique</a>
+                </div>
             </div>
         </section>
 
         <section class="manifesto">
             <div class="container">
-                <h2>L'exigence du détail</h2>
-                <p>Inspiré par les lignes architecturales contemporaines, le design intemporel et la noblesse des matières brutes.</p>
+                <h2>La rigueur du plan, l'exactitude du chantier</h2>
+                <p>De la restructuration complète des volumes à la livraison des ouvrages, notre démarche s'appuie sur une planification rigoureuse, la sélection de matériaux pérennes et une coordination exigeante des corps d'état.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; SoArt Atelier Côte d'Azur</p>
+        <p>&copy; SoArt Atelier Côte d'Azur — Architecture & Rénovation</p>
     </footer>
 </body>
 </html>
